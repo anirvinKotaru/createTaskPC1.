@@ -1,0 +1,64 @@
+<html>
+<center>
+  <head>
+    <title>Greek Battle</title>
+      <script>
+        function battle()
+        {
+          document.getElementById("b1").style.visibility = "visible";
+          document.getElementById("b1").value = "START";
+          document.getElementById("b2").style.visibility = "hidden";
+          document.getElementById("b3").style.visibility = "hidden";
+          document.getElementById("b4").style.visibility = "hidden";
+          document.getElementById("b5").style.visibility = "hidden";
+          var intro = "Hello! Welcome to your Greek Battle! Click \"START\" to start.";
+          document.getElementById("output").innerHTML = intro
+        }
+        function decend()
+        {
+          intro = "";
+          document.getElementById("b1").style.visibility = "hidden";
+          document.getElementById("output").innerHTML = intro;
+          document.getElementById("b2").value = "zeuz";
+          document.getElementById("b3").value = "poseidon";
+          document.getElementById("b4").value = "hades";
+          document.getElementById("b2").style.visibility = "visible";
+          document.getElementById("b3").style.visibility = "visible";
+          document.getElementById("b4").style.visibility = "visible";
+          document.getElementById("b5").style.visibility = "visible";
+          var fatherChoice = "Good, now choose your father.";
+          document.getElementById("output").innerHTML = fatherChoice;
+        }
+        function change_z()
+        {
+          document.getElementById("b1").onclick = z();
+        }
+        function z()
+        {
+          document.getElementById("b2").style.visibility = "visible";
+          document.getElementById("b3").style.visibility = "visible";
+          document.getElementById("b4").style.visibility = "visible";
+          document.getElementById("b2").value = "good";
+          document.getElementById("b3").value = "evil";
+          document.getElementById("b4").value = "go back";
+          document.getElementById("b4").onClick = "decend()"
+          var script = "Zeus: Good choice. Zeus controls the skies and everything in it. He can be as powerful as lightning and as light as a cloud, and now, you have that power. Will you choose to use your power for Good or Evil?";
+          document.getElementById("output").innerHTML = script;
+        }
+      </script>
+  </head>
+  <body onload="battle()">
+    <span id = "output"></span>
+    <br>
+    <input id = "b1" type = "button" value = "START" onClick = "decend()">
+    <br>
+    <input id = "b2" type = "button" value = "zeuz" onClick = "z()">
+    <br>
+    <input id = "b3" type = "button" value = "poseidon" onClick = "p()">
+    <br>
+    <input id = "b4" type = "button" value = "hades" onClick = "h()">
+    <br>
+    <input id = "b5" type = "button" value = "restart" onClick = "battle()">
+  </body>
+</center>
+  </html>
